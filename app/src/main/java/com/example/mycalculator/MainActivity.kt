@@ -51,6 +51,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun removeZeroAfterDot(result: String): String{
+        var value = result
+        if(result.contains(".0"))
+            value = result.substring(0, result.length-2) // 99.0
+        return value
+    }
+
     fun onEqual(view: View){
         lateinit var tvValue:String
         var prefix = ""
@@ -69,7 +76,34 @@ class MainActivity : AppCompatActivity() {
                     if(!prefix.isEmpty()){
                         firstParam = prefix + firstParam
                     }
-                    tv_input.text = (firstParam.toDouble() - secondParam.toDouble()).toString()
+                    tv_input.text = removeZeroAfterDot((firstParam.toDouble() - secondParam.toDouble()).toString())
+                }else if(tvValue.contains("*")){
+                    val splitValue = tvValue.split("*")
+                    var firstParam = splitValue[0]
+                    var secondParam = splitValue[1]
+
+                    if(!prefix.isEmpty()){
+                        firstParam = prefix + firstParam
+                    }
+                    tv_input.text = removeZeroAfterDot((firstParam.toDouble() * secondParam.toDouble()).toString())
+                }else if(tvValue.contains("+")){
+                    val splitValue = tvValue.split("+")
+                    var firstParam = splitValue[0]
+                    var secondParam = splitValue[1]
+
+                    if(!prefix.isEmpty()){
+                        firstParam = prefix + firstParam
+                    }
+                    tv_input.text = removeZeroAfterDot((firstParam.toDouble() + secondParam.toDouble()).toString())
+                }else if(tvValue.contains("/")){
+                    val splitValue = tvValue.split("/")
+                    var firstParam = splitValue[0]
+                    var secondParam = splitValue[1]
+
+                    if(!prefix.isEmpty()){
+                        firstParam = prefix + firstParam
+                    }
+                    tv_input.text = removeZeroAfterDot((firstParam.toDouble() / secondParam.toDouble()).toString())
                 }
 
         }catch (e: ArithmeticException){
