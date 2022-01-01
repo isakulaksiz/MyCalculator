@@ -52,7 +52,7 @@
             android:id="@+id/btn_divide"
             android:layout_width="0dp"
             android:text="/"
-            android:onClick="onDigit"
+            android:onClick="onOperator"
             android:layout_margin="6dp"
             android:layout_height="match_parent"
             android:layout_weight="1" />
@@ -95,7 +95,7 @@
             android:id="@+id/btn_multiply"
             android:layout_width="0dp"
             android:text="*"
-            android:onClick="onDigit"
+            android:onClick="onOperator"
             android:layout_margin="6dp"
             android:layout_height="match_parent"
             android:layout_weight="1" />
@@ -138,7 +138,7 @@
             android:id="@+id/btn_subtract"
             android:layout_width="0dp"
             android:text="-"
-            android:onClick="onDigit"
+            android:onClick="onOperator"
             android:layout_margin="6dp"
             android:layout_height="match_parent"
             android:layout_weight="1" />
@@ -156,7 +156,7 @@
             android:id="@+id/btn_decimal"
             android:layout_width="0dp"
             android:text="."
-            android:onClick="onDigit"
+            android:onClick="onDecimalPoint"
             android:layout_margin="6dp"
             android:layout_height="match_parent"
             android:layout_weight="1" />
@@ -173,7 +173,7 @@
             android:id="@+id/btn_clear"
             android:layout_width="0dp"
             android:text="CLR"
-            android:onClick="onDigit"
+            android:onClick="onClear"
             android:layout_margin="6dp"
             android:layout_height="match_parent"
             android:layout_weight="1" />
@@ -181,7 +181,7 @@
             android:id="@+id/btn_add"
             android:layout_width="0dp"
             android:text="+"
-            android:onClick="onDigit"
+            android:onClick="onOperator"
             android:layout_margin="6dp"
             android:layout_height="match_parent"
             android:layout_weight="1" />
@@ -198,6 +198,7 @@
             android:id="@+id/btn_equal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:onClick="onEqual"
             android:text="="/>
     </LinearLayout>
 </LinearLayout>
